@@ -2,7 +2,9 @@ services:
   app:
     user: "0"
     environment:
+      # PHP level cache
       PHP_OPCACHE_ENABLE: "false"
+      PHP_APCU_ENABLE: 0
       # Logs
       CADDY_LOG_OUTPUT: "file /var/log/caddy.log"
       CADDY_LOG_LEVEL: "INFO"

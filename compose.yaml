@@ -16,3 +16,6 @@ services:
       MYSQL_DATABASE: "symfony-bootstrap"
       MYSQL_USER: "user"
       MYSQL_PASSWORD: "password"
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports: [ 5672, 15672 ]
