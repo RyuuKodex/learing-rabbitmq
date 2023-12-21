@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Command;
+namespace App\Message;
 
 use App\Entity\User;
 use App\Repository\UserRepositoryInterface;
@@ -14,7 +14,7 @@ final readonly class CreateUserHandler
 {
     public function __construct(private UserRepositoryInterface $repository) {}
 
-    public function __invoke(CreateUserCommand $command): void
+    public function __invoke(CreateUser $command): void
     {
         $user = new User(Uuid::v4(), $command->getFirstName(), $command->getSurname(), $command->getEmail());
 

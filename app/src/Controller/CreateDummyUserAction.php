@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-use App\Command\CreateUserCommand;
 use App\Form\Dto\UserDto;
 use App\Form\Type\UserType;
+use App\Message\CreateUser;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -26,7 +26,7 @@ final class CreateDummyUserAction extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $userDto = $form->getData();
 
-            $command = new CreateUserCommand($userDto->getFirstName(), $userDto->getSurname(), $userDto->getEmail());
+            $command = new CreateUser($userDto->getFirstName(), $userDto->getSurname(), $userDto->getEmail());
 
             $messageBus->dispatch($command);
         }

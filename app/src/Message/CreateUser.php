@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Command;
+namespace App\Message;
 
-final readonly class CreateUserCommand
+final readonly class CreateUser
 {
     public function __construct(
         private string $firstName,
