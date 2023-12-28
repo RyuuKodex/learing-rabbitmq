@@ -3,8 +3,7 @@ framework:
         transports:
           async_users:
             dsn: '%env(MESSENGER_TRANSPORT_DSN)%'
-          external_messages:
-            dsn: '%env(MESSENGER_TRANSPORT_DSN)%'
+            serializer: App\Infrastructure\Messenger\ExternalJsonMessageSerializer
             options:
               auto_setup: true
               exchange:
@@ -16,4 +15,4 @@ framework:
                   binding_keys: [ from_external ]
 
         routing:
-          'App\Message\UserInfo': async_users
+          'App\Application\Query\GetUserData': async_users

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace App\Controller;
+namespace App\UI\Controller;
 
-use App\Form\Dto\UserDto;
-use App\Form\Type\UserType;
-use App\Message\CreateUser;
+use App\Application\Command\CreateUser;
+use App\UI\Form\Dto\UserDto;
+use App\UI\Form\Type\UserType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

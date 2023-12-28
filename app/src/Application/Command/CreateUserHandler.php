@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Message;
+namespace App\Application\Command;
 
-use App\Entity\User;
-use App\Repository\UserRepositoryInterface;
+use App\Domain\Entity\User;
+use App\Infrastructure\Repository\UserRepositoryInterface;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 use Symfony\Component\Uid\Uuid;
 
